@@ -27,6 +27,9 @@ func init() {
 
 			// 设置时区，JWT 里会使用，日志记录里也会使用到
 			"timezone": config.Env("TIMEZONE", "Asia/Shanghai"),
+
+			// gin_mode
+			"gin_mode": config.Env("GIN_MODE", "gin.ReleaseMode"),
 		}
 	})
 }
