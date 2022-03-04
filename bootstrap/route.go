@@ -27,7 +27,7 @@ func SetupRoute(router *gin.Engine) {
 func setup404Handler(router *gin.Engine) {
 	router.Use(
 		middlewares.Logger(),
-		gin.Recovery(),
+		middlewares.Recovery(),
 	)
 }
 
