@@ -11,7 +11,7 @@ import (
 // RedisStore 实现 base64Captcha.Store interface
 type RedisStore struct {
 	RedisClient *redis.RedisClient
-	keyPrefix   string
+	KeyPrefix   string
 }
 
 //Set 实现 base64Captha.Store interface的 Set 方法
@@ -23,7 +23,7 @@ func (s *RedisStore) Set(key string, value string) error {
 		ExpireTime = time.Minute * time.Duration(config.GetInt64("captcha.debug_expire_time"))
 	}
 
-	if ok := s.RedisClient.Set(s.keyPrefix+key, value, ExpireTime); !ok {
+	if ok := s.RedisClient.Set(s.KeyPrefix+key, value, ExpireTime); !ok {
 		return errors.New("无法存储图片验证码答案")
 	}
 
