@@ -29,7 +29,7 @@ func init() {
 			"timezone": config.Env("TIMEZONE", "Asia/Shanghai"),
 
 			// gin_mode
-			"gin_mode": config.Env("GIN_MODE", "gin.ReleaseMode"),
+			"gin_mode": config.Env("GIN_MODE", "release"),
 		}
 	})
 }
